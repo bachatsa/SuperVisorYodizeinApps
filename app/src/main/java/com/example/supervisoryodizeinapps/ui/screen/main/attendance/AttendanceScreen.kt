@@ -4,6 +4,7 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.provider.Settings
+import android.util.Log
 import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.FastOutLinearInEasing
@@ -176,7 +177,7 @@ fun AttendanceScreen(
                 with(density) { (40).dp.roundToPx() }
             } + fadeOut()
         ) {
-            AttendanceCard(navController = navController, Modifier, onPresentPressed)
+            AttendanceCard(navController = navController, uiState.isAbleToDoAttendance, Modifier, onPresentPressed)
         }
     }
 }
@@ -184,6 +185,7 @@ fun AttendanceScreen(
 @Composable
 private fun AttendanceCard(
     navController: NavController,
+    isAbleToDoAttendance: Boolean,
     modifier: Modifier,
     onPresentPressed: () -> Unit
 ) {
@@ -230,15 +232,17 @@ private fun AttendanceCard(
                 ) {
                     navController.navigate(Screen.Permit.route)
                 }
-
+                Log.d("WOI INI KENAPA ERROR",isAbleToDoAttendance.toString())
                 YMBorderedButton(
                     modifier = Modifier
                         .weight(1f),
                     title = stringResource(id = R.string.present),
-                    backgroundColor = appleGreen,
+                    backgroundColor = appleGreen.copy(if (isAbleToDoAttendance) 1f else 0.5f),
                     foregroundColor = Color.White,
                     cornerRadius = 20,
+                    enabled = isAbleToDoAttendance,
                     onClick = onPresentPressed
+
                 )
             }
         }

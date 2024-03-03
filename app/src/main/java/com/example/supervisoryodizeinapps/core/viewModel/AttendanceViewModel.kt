@@ -45,7 +45,15 @@ class AttendanceViewModel @Inject constructor(
                                 currentLocation = LatLng(
                                     location?.latitude ?: 0.0,
                                     location?.longitude ?: 0.0
-                                )
+                                ),
+                                isAbleToDoAttendance = if(_uiState.value.currentLocation != null) {
+                                    LatLng(
+                                        location?.latitude ?: 0.0,
+                                        location?.longitude ?: 0.0
+                                    ).sphericalDistance(_uiState.value.epic)  <= 50
+                                } else {
+                                    true
+                                }
                             )
                         }
                     }
@@ -143,7 +151,8 @@ sealed interface PermissionEvent {
 
 data class AttendanceUIState(
     var currentLocation: LatLng? = null,
-    var epic: LatLng = LatLng(-6.8008833, 110.8484402),
+    var epic: LatLng = LatLng(-7.9221735, 112.6248556),
     val toastMessages: String = "",
     val isSuccess: Boolean = false,
+    val isAbleToDoAttendance: Boolean = false,
 )

@@ -362,7 +362,6 @@ open class DatabaseRepositoryImpl @Inject constructor(
             emit(value = ResourceState.ERROR(it.localizedMessage.toString()))
         }
     }
-
     override fun checkIsHasDoAttendance(): Flow<ResourceState<Boolean>> {
         val today = Date()
         val todayString = today.toString("dd-MM-yyyy")

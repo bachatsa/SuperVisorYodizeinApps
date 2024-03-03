@@ -25,7 +25,7 @@ class CreateUpdateTargetViewModel @Inject constructor(
     var uiState = _uiState.asStateFlow()
 
     init {
-
+        checkIsHasDoAttendance()
     }
     fun onSelectedUser(newValue: User) {
         _uiState.update {
@@ -273,7 +273,7 @@ class CreateUpdateTargetViewModel @Inject constructor(
             )
         }
     }
-    private fun checkAttendance(){
+    private fun checkIsHasDoAttendance(){
         useCase
             .checkIsHasDoAttendance()
             .onEach { result ->

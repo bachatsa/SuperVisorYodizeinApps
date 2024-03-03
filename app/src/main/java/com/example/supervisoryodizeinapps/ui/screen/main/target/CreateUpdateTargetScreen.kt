@@ -176,7 +176,8 @@ fun CreateUpdateTargetScreen(
                                     contentPadding = PaddingValues(0.dp),
                                     colors = ButtonDefaults.buttonColors(
                                         containerColor = Color.White
-                                    )
+                                    ),
+                                    enabled =  uiState.isHasDoAttendance,
                                 ) {
                                     Text(
                                         text = stringResource(id = R.string.delete),
@@ -197,7 +198,7 @@ fun CreateUpdateTargetScreen(
                                     colors = ButtonDefaults.buttonColors(
                                         containerColor = Color.White
                                     ),
-                                    enabled = uiState.isValid
+                                    enabled = uiState.isValid && uiState.isHasDoAttendance,
                                 ) {
                                     Text(
                                         text = stringResource(id = R.string.update),
