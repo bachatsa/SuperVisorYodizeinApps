@@ -1,13 +1,14 @@
-package com.ydzmobile.supervisor.core.viewModel
+package com.example.supervisoryodizeinapps.core.viewModel
+
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ydzmobile.supervisor.core.data.ResourceState
-import com.ydzmobile.supervisor.core.domain.model.auth.User
-import com.ydzmobile.supervisor.core.domain.model.monitor.TargetModel
-import com.ydzmobile.supervisor.core.domain.model.monitor.TargetModelRequest
-import com.ydzmobile.supervisor.core.domain.useCase.CreateUpdateTargetUseCase
+import com.example.supervisoryodizeinapps.core.data.ResourceState
+import com.example.supervisoryodizeinapps.core.domain.model.auth.User
+import com.example.supervisoryodizeinapps.core.domain.model.monitor.TargetModel
+import com.example.supervisoryodizeinapps.core.domain.model.monitor.TargetModelRequest
+import com.example.supervisoryodizeinapps.core.domain.useCase.CreateUpdateTargetUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -23,7 +24,9 @@ class CreateUpdateTargetViewModel @Inject constructor(
     private var _uiState = MutableStateFlow(CreateUpdateUIState())
     var uiState = _uiState.asStateFlow()
 
+    init {
 
+    }
     fun onSelectedUser(newValue: User) {
         _uiState.update {
             it.copy(
@@ -144,6 +147,8 @@ class CreateUpdateTargetViewModel @Inject constructor(
                     is ResourceState.LOADING -> {
                         Log.d("loginUser", "LOADING")
                     }
+
+                    else -> {}
                 }
             }.launchIn(viewModelScope)
     }
@@ -180,10 +185,11 @@ class CreateUpdateTargetViewModel @Inject constructor(
                     is ResourceState.LOADING -> {
                         Log.d("loginUser", "LOADING")
                     }
+
+                    else -> {}
                 }
             }.launchIn(viewModelScope)
     }
-
     fun deleteTarget() {
         val target = TargetModelRequest(
             idEmployee = _uiState.value.selectedUser.idEmployee ?: "",
@@ -216,6 +222,8 @@ class CreateUpdateTargetViewModel @Inject constructor(
                     is ResourceState.LOADING -> {
                         Log.d("loginUser", "LOADING")
                     }
+
+                    else -> {}
                 }
             }.launchIn(viewModelScope)
     }
@@ -245,6 +253,8 @@ class CreateUpdateTargetViewModel @Inject constructor(
                     is ResourceState.LOADING -> {
                         Log.d("loginUser", "LOADING")
                     }
+
+                    else -> {}
                 }
             }.launchIn(viewModelScope)
     }
@@ -263,6 +273,30 @@ class CreateUpdateTargetViewModel @Inject constructor(
             )
         }
     }
+    private fun checkAttendance(){
+        useCase
+            .checkIsHasDoAttendance()
+            .onEach { result ->
+                when (result) {
+                    is ResourceState.SUCCESS -> {
+                        _uiState.update {
+                            it.copy(isHasDoAttendance = result.data!!, isLoaded = true)
+                        }
+                        Log.d("loginUser", "SUCCESS")
+                    }
+
+                    is ResourceState.ERROR -> {
+                        Log.d("loginUser", "ERROR")
+                    }
+
+                    is ResourceState.LOADING -> {
+                        Log.d("loginUser", "LOADING")
+                    }
+
+                    else -> {}
+                }
+            }.launchIn(viewModelScope)
+    }
 }
 
 data class CreateUpdateUIState(
@@ -278,5 +312,6 @@ data class CreateUpdateUIState(
     val isSuccess: Boolean = false,
     val isLoaded: Boolean = false,
     val users: List<User> = listOf(),
-    val isValid: Boolean = false
+    val isValid: Boolean = false,
+    val isHasDoAttendance: Boolean = false,
 )

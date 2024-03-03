@@ -8,11 +8,10 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.ydzmobile.supervisor.core.viewModel.AttendanceHistoryViewModel
-import com.ydzmobile.supervisor.core.viewModel.AttendanceMonitorViewModel
-import com.ydzmobile.supervisor.core.viewModel.DivisionDetailViewModel
-import com.ydzmobile.supervisor.core.viewModel.HomeViewModel
-import com.ydzmobile.supervisor.core.viewModel.ProfileViewModel
+import com.example.supervisoryodizeinapps.core.viewModel.AttendanceHistoryViewModel
+import com.example.supervisoryodizeinapps.core.viewModel.AttendanceMonitorViewModel
+import com.example.supervisoryodizeinapps.core.viewModel.HomeViewModel
+import com.example.supervisoryodizeinapps.core.viewModel.ProfileViewModel
 import com.ydzmobile.supervisor.ui.screen.main.attendanceHisotry.AttendanceHistoryScreen
 import com.ydzmobile.supervisor.ui.screen.main.attendanceMonitor.AttendanceMonitorScreen
 import com.ydzmobile.supervisor.ui.screen.main.home.HomeScreen

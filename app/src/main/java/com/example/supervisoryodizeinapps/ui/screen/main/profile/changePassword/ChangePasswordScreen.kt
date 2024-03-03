@@ -16,9 +16,9 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.supervisoryodizeinapps.R
-import com.ydzmobile.supervisor.core.viewModel.ChangePasswordUIState
-import com.ydzmobile.supervisor.ui.component.atom.button.YMBorderedButton
-import com.ydzmobile.supervisor.ui.component.atom.textfield.YMProfileTextField
+import com.example.supervisoryodizeinapps.core.viewModel.ChangePasswordUIState
+import com.example.supervisoryodizeinapps.ui.component.atom.button.YMBorderedButton
+import com.example.supervisoryodizeinapps.ui.component.atom.textfield.YMProfileTextField
 import com.ydzmobile.supervisor.ui.navigation.Screen
 import com.ydzmobile.supervisor.ui.theme.littleBoyBlue
 import com.ydzmobile.supervisor.ui.theme.poppinsFont

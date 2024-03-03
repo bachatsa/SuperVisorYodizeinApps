@@ -1,17 +1,14 @@
-package com.ydzmobile.supervisor.core.viewModel
+package com.example.supervisoryodizeinapps.core.viewModel
 
-import android.os.Build
 import android.util.Log
-import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.android.gms.maps.model.LatLng
 import com.google.maps.android.ktx.utils.sphericalDistance
-import com.ydzmobile.supervisor.core.data.AuthState
-import com.ydzmobile.supervisor.core.data.ResourceState
-import com.ydzmobile.supervisor.core.domain.model.attendance.Attendance
-import com.ydzmobile.supervisor.core.domain.useCase.AttendanceUseCase
-import com.ydzmobile.supervisor.core.domain.useCase.GetLocationUseCase
+import com.example.supervisoryodizeinapps.core.data.ResourceState
+import com.example.supervisoryodizeinapps.core.domain.model.attendance.Attendance
+import com.example.supervisoryodizeinapps.core.domain.useCase.AttendanceUseCase
+import com.example.supervisoryodizeinapps.core.domain.useCase.GetLocationUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

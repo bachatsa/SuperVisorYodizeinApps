@@ -1,11 +1,13 @@
-package com.ydzmobile.supervisor.core.viewModel
+package com.example.supervisoryodizeinapps.core.viewModel
 
+import android.os.Build
 import android.util.Log
+import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ydzmobile.supervisor.core.data.ResourceState
-import com.ydzmobile.supervisor.core.domain.model.AttendanceHistoryModel
-import com.ydzmobile.supervisor.core.domain.useCase.AttendanceHistoryUseCase
+import com.example.supervisoryodizeinapps.core.data.ResourceState
+import com.example.supervisoryodizeinapps.core.domain.model.AttendanceHistoryModel
+import com.example.supervisoryodizeinapps.core.domain.useCase.AttendanceHistoryUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -14,6 +16,7 @@ import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.update
 import javax.inject.Inject
 
+@RequiresApi(Build.VERSION_CODES.O)
 @HiltViewModel
 class AttendanceHistoryViewModel @Inject constructor(
     private val useCase: AttendanceHistoryUseCase
@@ -24,6 +27,7 @@ class AttendanceHistoryViewModel @Inject constructor(
     init {
         getHistories()
     }
+    @RequiresApi(Build.VERSION_CODES.O)
     fun getHistories() {
         useCase.getHistories().onEach { result ->
             when (result) {
@@ -43,6 +47,8 @@ class AttendanceHistoryViewModel @Inject constructor(
                 is ResourceState.LOADING -> {
                     Log.d("getHistories", "LOADING")
                 }
+
+                else -> {}
             }
         }.launchIn(viewModelScope)
     }

@@ -10,7 +10,7 @@ const val DIVISION_ID_ARGUMENT_KEY = "DIVISION_ID_ARG_TARGET"
 const val DIVISION_ARGUMENT_KEY = "DIVISION_ARG_TARGET"
 const val TARGET_ARGUMENT_KEY = "TARGET_ARGUMENT_KEY"
 
-sealed class Screen(
+sealed class Screen (
     val route: String
 ) {
     object Main : Screen("main_route")

@@ -18,10 +18,9 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.supervisoryodizeinapps.R
-import com.ydzmobile.supervisor.core.domain.enum.PermitType
-import com.ydzmobile.supervisor.ui.component.molecule.main.attendance.AttendanceNavBar
-import com.ydzmobile.supervisor.ui.component.molecule.main.attendance.permit.PermitCard
-import com.ydzmobile.supervisor.ui.navigation.MAIN_GRAPH_ROUTE
+import com.example.supervisoryodizeinapps.core.domain.enum.PermitType
+import com.example.supervisoryodizeinapps.ui.component.molecule.main.attendance.AttendanceNavBar
+import com.example.supervisoryodizeinapps.ui.component.molecule.main.attendance.permit.PermitCard
 import com.ydzmobile.supervisor.ui.navigation.Screen
 import com.ydzmobile.supervisor.ui.theme.lightCarminePink
 

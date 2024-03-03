@@ -16,9 +16,9 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.supervisoryodizeinapps.R
-import com.ydzmobile.supervisor.core.domain.model.auth.User
-import com.ydzmobile.supervisor.core.viewModel.ProfileUIState
-import com.ydzmobile.supervisor.ui.component.atom.button.YMBorderedButton
+import com.example.supervisoryodizeinapps.core.domain.model.auth.User
+import com.example.supervisoryodizeinapps.core.viewModel.ProfileUIState
+import com.example.supervisoryodizeinapps.ui.component.atom.button.YMBorderedButton
 import com.ydzmobile.supervisor.ui.component.molecule.main.profile.DetailProfile
 import com.ydzmobile.supervisor.ui.component.molecule.main.profile.ProfileHeader
 import com.ydzmobile.supervisor.ui.navigation.AUTH_GRAPH_ROUTE

@@ -1,12 +1,12 @@
-package com.ydzmobile.supervisor.core.domain.useCase
+package com.example.supervisoryodizeinapps.core.domain.useCase
 
 import android.net.Uri
-import com.ydzmobile.supervisor.core.data.ResourceState
-import com.ydzmobile.supervisor.core.data.auth.AuthRepositoryImpl
-import com.ydzmobile.supervisor.core.data.database.DatabaseRepositoryImpl
-import com.ydzmobile.supervisor.core.data.remoteStorage.RemoteStorageImpl
-import com.ydzmobile.supervisor.core.domain.model.auth.User
-import com.ydzmobile.supervisor.core.domain.model.division.Division
+import com.example.supervisoryodizeinapps.core.data.ResourceState
+import com.example.supervisoryodizeinapps.core.data.auth.AuthRepositoryImpl
+import com.example.supervisoryodizeinapps.core.data.database.DatabaseRepositoryImpl
+import com.example.supervisoryodizeinapps.core.data.remoteStorage.RemoteStorageImpl
+import com.example.supervisoryodizeinapps.core.domain.model.auth.User
+import com.example.supervisoryodizeinapps.core.domain.model.division.Division
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

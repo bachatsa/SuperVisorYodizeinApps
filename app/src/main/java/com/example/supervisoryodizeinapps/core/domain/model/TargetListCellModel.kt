@@ -1,4 +1,4 @@
-package com.ydzmobile.supervisor.core.domain.model
+package com.example.supervisoryodizeinapps.core.domain.model
 
 data class TargetListCellModel(
     val id: Int,

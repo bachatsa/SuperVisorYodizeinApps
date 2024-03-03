@@ -1,4 +1,4 @@
-package com.ydzmobile.supervisor.core.di
+package com.example.supervisoryodizeinapps.core.di
 
 import android.content.Context
 import com.google.android.gms.location.LocationServices
@@ -7,10 +7,10 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
-import com.ydzmobile.supervisor.core.data.auth.AuthRepository
-import com.ydzmobile.supervisor.core.data.auth.AuthRepositoryImpl
-import com.ydzmobile.supervisor.core.utils.ILocationService
-import com.ydzmobile.supervisor.core.utils.LocationService
+import com.example.supervisoryodizeinapps.core.data.auth.AuthRepository
+import com.example.supervisoryodizeinapps.core.data.auth.AuthRepositoryImpl
+import com.example.supervisoryodizeinapps.core.utils.ILocationService
+import com.example.supervisoryodizeinapps.core.utils.LocationService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

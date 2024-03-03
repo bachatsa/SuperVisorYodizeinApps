@@ -41,11 +41,11 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.supervisoryodizeinapps.R
-import com.ydzmobile.supervisor.core.data.AuthState
-import com.ydzmobile.supervisor.core.viewModel.RegisterUIState
-import com.ydzmobile.supervisor.ui.component.atom.button.YMBorderedButton
-import com.ydzmobile.supervisor.ui.component.atom.textfield.YMTextField
-import com.ydzmobile.supervisor.ui.component.molecule.auth.AuthBanner
+import com.example.supervisoryodizeinapps.core.data.AuthState
+import com.example.supervisoryodizeinapps.core.viewModel.RegisterUIState
+import com.example.supervisoryodizeinapps.ui.component.atom.button.YMBorderedButton
+import com.example.supervisoryodizeinapps.ui.component.atom.textfield.YMTextField
+import com.example.supervisoryodizeinapps.ui.component.molecule.auth.AuthBanner
 import com.ydzmobile.supervisor.ui.theme.*
 
 @Composable

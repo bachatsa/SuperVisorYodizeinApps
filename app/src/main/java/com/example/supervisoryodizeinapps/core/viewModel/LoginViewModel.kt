@@ -1,12 +1,11 @@
-package com.ydzmobile.supervisor.core.viewModel
+package com.example.supervisoryodizeinapps.core.viewModel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ydzmobile.supervisor.core.data.AuthState
-import com.ydzmobile.supervisor.core.data.ResourceState
-import com.ydzmobile.supervisor.core.domain.model.auth.User
-import com.ydzmobile.supervisor.core.domain.useCase.LoginUseCase
+import com.example.supervisoryodizeinapps.core.data.AuthState
+import com.example.supervisoryodizeinapps.core.data.ResourceState
+import com.example.supervisoryodizeinapps.core.domain.useCase.LoginUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -47,6 +46,8 @@ class LoginViewModel @Inject constructor(
                     is ResourceState.LOADING -> {
                         Log.d("loginUser", "LOADING")
                     }
+
+                    else -> {}
                 }
         }.launchIn(viewModelScope)
     }
@@ -79,6 +80,8 @@ class LoginViewModel @Inject constructor(
                     is ResourceState.LOADING -> {
                         Log.d("checkIsUserLogined", "LOADING")
                     }
+
+                    else -> {}
                 }
         }.launchIn(viewModelScope)
     }

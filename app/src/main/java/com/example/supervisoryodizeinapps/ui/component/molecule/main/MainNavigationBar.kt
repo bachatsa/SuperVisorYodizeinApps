@@ -1,4 +1,4 @@
-package com.ydzmobile.supervisor.ui.component.molecule.main
+package com.example.supervisoryodizeinapps.ui.component.molecule.main
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth

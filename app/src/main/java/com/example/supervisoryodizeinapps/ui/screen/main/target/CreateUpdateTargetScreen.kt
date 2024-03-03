@@ -2,7 +2,6 @@ package com.ydzmobile.supervisor.ui.screen.main.target
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.background
-import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -35,14 +34,13 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.supervisoryodizeinapps.R
-import com.ydzmobile.supervisor.core.domain.model.auth.User
-import com.ydzmobile.supervisor.core.extension.dateStringToLong
-import com.ydzmobile.supervisor.core.extension.longToDateStr
-import com.ydzmobile.supervisor.core.viewModel.CreateUpdateUIState
-import com.ydzmobile.supervisor.ui.component.atom.button.YMDateProfileDatePicker
-import com.ydzmobile.supervisor.ui.component.atom.button.YMDropDown2
-import com.ydzmobile.supervisor.ui.component.atom.button.YMDropDownUsers
-import com.ydzmobile.supervisor.ui.component.atom.textfield.YMBasicTextField
+import com.example.supervisoryodizeinapps.core.domain.model.auth.User
+import com.example.supervisoryodizeinapps.core.extension.longToDateStr
+import com.example.supervisoryodizeinapps.core.viewModel.CreateUpdateUIState
+import com.example.supervisoryodizeinapps.ui.component.atom.button.YMDateProfileDatePicker
+import com.example.supervisoryodizeinapps.ui.component.atom.button.YMDropDown2
+import com.example.supervisoryodizeinapps.ui.component.atom.button.YMDropDownUsers
+import com.example.supervisoryodizeinapps.ui.component.atom.textfield.YMBasicTextField
 import com.ydzmobile.supervisor.ui.component.molecule.main.target.TargetNavbar
 import com.ydzmobile.supervisor.ui.theme.littleBoyBlue
 import com.ydzmobile.supervisor.ui.theme.poppinsFont
@@ -223,7 +221,7 @@ fun CreateUpdateTargetScreen(
                                 colors = ButtonDefaults.buttonColors(
                                     containerColor = Color.White
                                 ),
-                                enabled = uiState.isValid
+                                enabled = uiState.isValid && uiState.isHasDoAttendance,
                             ) {
                                 Text(
                                     text = stringResource(id = R.string.add),

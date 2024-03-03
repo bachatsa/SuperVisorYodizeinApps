@@ -1,4 +1,4 @@
-package com.ydzmobile.supervisor.core.domain.model.auth
+package com.example.supervisoryodizeinapps.core.domain.model.auth
 
 import com.google.errorprone.annotations.Keep
 

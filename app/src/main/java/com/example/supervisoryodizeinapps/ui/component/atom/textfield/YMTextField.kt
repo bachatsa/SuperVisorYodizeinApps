@@ -1,4 +1,4 @@
-package com.ydzmobile.supervisor.ui.component.atom.textfield
+package com.example.supervisoryodizeinapps.ui.component.atom.textfield
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

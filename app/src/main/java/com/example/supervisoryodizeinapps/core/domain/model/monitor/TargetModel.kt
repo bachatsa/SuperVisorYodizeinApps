@@ -1,4 +1,4 @@
-package com.ydzmobile.supervisor.core.domain.model.monitor
+package com.example.supervisoryodizeinapps.core.domain.model.monitor
 
 import android.os.Parcelable
 import com.google.gson.Gson

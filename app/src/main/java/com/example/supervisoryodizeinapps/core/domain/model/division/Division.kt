@@ -1,8 +1,6 @@
-package com.ydzmobile.supervisor.core.domain.model.division
+package com.example.supervisoryodizeinapps.core.domain.model.division
 
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
-import com.ydzmobile.supervisor.core.domain.model.monitor.TargetModel
+import com.example.supervisoryodizeinapps.core.domain.model.monitor.TargetModel
 
 data class Division(
     val id: String = "",

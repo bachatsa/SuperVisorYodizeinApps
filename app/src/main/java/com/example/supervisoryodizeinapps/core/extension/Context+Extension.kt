@@ -1,4 +1,4 @@
-package com.ydzmobile.supervisor.core.extension
+package com.example.supervisoryodizeinapps.core.extension
 
 import android.Manifest
 import android.content.Context

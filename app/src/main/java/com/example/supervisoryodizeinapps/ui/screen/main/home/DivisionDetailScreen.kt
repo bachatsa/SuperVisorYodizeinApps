@@ -13,12 +13,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.ydzmobile.supervisor.core.domain.model.monitor.toUriString
-import com.ydzmobile.supervisor.core.viewModel.DivisionDetailUIState
+import com.example.supervisoryodizeinapps.core.domain.model.monitor.toUriString
+import com.example.supervisoryodizeinapps.core.viewModel.DivisionDetailUIState
 import com.ydzmobile.supervisor.ui.component.molecule.main.target.TargetDetailCell
 import com.ydzmobile.supervisor.ui.component.molecule.main.target.TargetNavbar
-import com.ydzmobile.supervisor.ui.navigation.DIVISION_ID_ARGUMENT_KEY
-import com.ydzmobile.supervisor.ui.navigation.TARGET_ID_ARGUMENT_KEY
 
 @Composable
 fun DivisionDetailScreen(
@@ -60,5 +58,5 @@ fun DivisionDetailScreen(
 @Preview(showSystemUi = true)
 @Composable
 private fun DivisionDetailScreenPreview() {
-    DivisionDetailScreen(rememberNavController(), "adada", "", DivisionDetailUIState())
+    DivisionDetailScreen(rememberNavController(), "detail division", "", DivisionDetailUIState())
 }

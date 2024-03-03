@@ -36,7 +36,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.supervisoryodizeinapps.R
-import com.ydzmobile.supervisor.ui.component.molecule.main.MainNavigationBar
+import com.example.supervisoryodizeinapps.ui.component.molecule.main.MainNavigationBar
 import com.ydzmobile.supervisor.ui.navigation.Screen
 import com.ydzmobile.supervisor.ui.navigation.bottomTabNav.BottomBarScreen
 import com.ydzmobile.supervisor.ui.navigation.bottomTabNav.BottomNavGraph
@@ -50,7 +50,7 @@ fun MainScreen(
     val navController = rememberNavController()
     val navStackBackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navStackBackEntry?.destination
-    val currentRoutes = currentDestination?.route ?: ""
+    val currentRoutes = currentDestination?.route ?: "0"
     val isHome = currentDestination?.hierarchy?.any { it.route == BottomBarScreen.Home.route } == true
 
     Scaffold(

@@ -1,4 +1,4 @@
-package com.ydzmobile.supervisor.ui.component.atom.button
+package com.example.supervisoryodizeinapps.ui.component.atom.button
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -32,7 +32,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.supervisoryodizeinapps.R
-import com.ydzmobile.supervisor.core.domain.model.auth.User
+import com.example.supervisoryodizeinapps.core.domain.model.auth.User
 import com.ydzmobile.supervisor.ui.theme.darkJungleGreen
 import com.ydzmobile.supervisor.ui.theme.poppinsFont
 

@@ -1,4 +1,4 @@
-package com.ydzmobile.supervisor.core.viewModel
+package com.example.supervisoryodizeinapps.core.viewModel
 
 import android.net.Uri
 import androidx.lifecycle.ViewModel

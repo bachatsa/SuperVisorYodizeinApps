@@ -3,7 +3,7 @@ package com.ydzmobile.supervisor.ui.component.molecule.main.home
 import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.ydzmobile.supervisor.core.domain.model.division.Division
+import com.example.supervisoryodizeinapps.core.domain.model.division.Division
 
 @Composable
 fun DivisionListCell(

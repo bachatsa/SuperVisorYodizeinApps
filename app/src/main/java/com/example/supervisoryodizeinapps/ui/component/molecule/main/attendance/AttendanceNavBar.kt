@@ -1,4 +1,4 @@
-package com.ydzmobile.supervisor.ui.component.molecule.main.attendance
+package com.example.supervisoryodizeinapps.ui.component.molecule.main.attendance
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row

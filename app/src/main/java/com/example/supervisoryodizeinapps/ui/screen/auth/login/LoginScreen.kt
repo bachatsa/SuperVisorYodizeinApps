@@ -1,6 +1,5 @@
 package com.ydzmobile.supervisor.ui.screen.auth.login
 
-import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -16,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
@@ -23,13 +23,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.google.firebase.auth.FirebaseAuth
 import com.example.supervisoryodizeinapps.R
-import com.ydzmobile.supervisor.core.data.AuthState
-import com.ydzmobile.supervisor.core.viewModel.LoginUIState
-import com.ydzmobile.supervisor.ui.component.atom.button.YMBorderedButton
-import com.ydzmobile.supervisor.ui.component.atom.textfield.YMTextField
-import com.ydzmobile.supervisor.ui.component.molecule.auth.AuthBanner
+import com.example.supervisoryodizeinapps.core.data.AuthState
+import com.example.supervisoryodizeinapps.core.viewModel.LoginUIState
+import com.example.supervisoryodizeinapps.ui.component.atom.button.YMBorderedButton
+import com.example.supervisoryodizeinapps.ui.component.atom.textfield.YMTextField
+import com.example.supervisoryodizeinapps.ui.component.molecule.auth.AuthBanner
 import com.ydzmobile.supervisor.ui.navigation.MAIN_GRAPH_ROUTE
 import com.ydzmobile.supervisor.ui.navigation.Screen
 import com.ydzmobile.supervisor.ui.theme.*
@@ -91,7 +90,7 @@ fun LoginScreen(
             )
 
             ClickableText(
-                modifier = Modifier,
+                modifier = Modifier.testTag("Forgotpasword"),
                 text = AnnotatedString(stringResource(id = R.string.forgotPassword_title)),
                 onClick = {
                     navController.navigate(Screen.ForgotPassword.route)
@@ -100,7 +99,7 @@ fun LoginScreen(
         }
 
         YMBorderedButton(
-            modifier = Modifier.padding(horizontal = 36.dp),
+            modifier = Modifier.padding(horizontal = 36.dp).testTag("Login"),
             title = stringResource(id = R.string.login_button_title),
             titleSize = 16,
             backgroundColor = littleBoyBlue,
@@ -120,7 +119,7 @@ fun LoginScreen(
             )
 
             ClickableText(
-                modifier = Modifier,
+                modifier = Modifier.testTag("Register"),
                 text = AnnotatedString(stringResource(id = R.string.register_button_title_clickable)),
                 style = poppinsFont(size = 14, color = littleBoyBlue),
                 onClick = {
@@ -143,5 +142,5 @@ private fun LoginScreenPreview() {
     LoginScreen(nav, uiState = LoginUIState(
         email = "",
         password = ""
-    ), {}, {}, {})
+    ), {}, {}) {}
 }

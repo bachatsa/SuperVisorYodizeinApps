@@ -1,7 +1,7 @@
-package com.ydzmobile.supervisor.core.domain.model.attendance
+package com.example.supervisoryodizeinapps.core.domain.model.attendance
 
 import com.google.firebase.Timestamp
-import com.ydzmobile.supervisor.core.extension.toFormattedString
+import com.example.supervisoryodizeinapps.core.extension.toFormattedString
 import java.time.LocalDateTime
 import java.util.Date
 

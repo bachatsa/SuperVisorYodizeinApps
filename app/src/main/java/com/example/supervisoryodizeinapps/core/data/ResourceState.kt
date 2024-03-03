@@ -1,6 +1,6 @@
-package com.ydzmobile.supervisor.core.data
+package com.example.supervisoryodizeinapps.core.data
 
-import com.ydzmobile.supervisor.core.domain.enum.State
+import com.example.supervisoryodizeinapps.core.domain.enum.State
 
 sealed class ResourceState<T>(val state: State, val data: T? = null, val message: String? = null) {
     class SUCCESS<T>(data: T) : ResourceState<T>(State.SUCCES, data)

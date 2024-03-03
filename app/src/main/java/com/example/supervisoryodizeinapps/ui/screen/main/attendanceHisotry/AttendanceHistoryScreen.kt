@@ -14,7 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.supervisoryodizeinapps.R
-import com.ydzmobile.supervisor.core.viewModel.AttendanceHistoryUIState
+import com.example.supervisoryodizeinapps.core.viewModel.AttendanceHistoryUIState
 import com.ydzmobile.supervisor.ui.component.molecule.main.attendanceHistory.AttendanceHistoryCell
 import com.ydzmobile.supervisor.ui.theme.poppinsFont
 

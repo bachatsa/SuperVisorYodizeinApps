@@ -1,11 +1,10 @@
-package com.ydzmobile.supervisor.core.viewModel
+package com.example.supervisoryodizeinapps.core.viewModel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ydzmobile.supervisor.core.data.AuthState
-import com.ydzmobile.supervisor.core.data.ResourceState
-import com.ydzmobile.supervisor.core.domain.useCase.ForgotPasswordUseCase
+import com.example.supervisoryodizeinapps.core.data.ResourceState
+import com.example.supervisoryodizeinapps.core.domain.useCase.ForgotPasswordUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -51,6 +50,8 @@ class ForgotPasswordViewModel @Inject constructor(
                     is ResourceState.LOADING -> {
                         Log.d("forgotPassword", "LOADING")
                     }
+
+                    else -> {}
                 }
             }.launchIn(viewModelScope)
     }

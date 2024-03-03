@@ -1,8 +1,7 @@
-package com.ydzmobile.supervisor.ui.component.molecule.main.attendance
+package com.example.supervisoryodizeinapps.ui.component.molecule.main.attendance
 
 import android.content.Context
 import android.graphics.Bitmap
-import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer

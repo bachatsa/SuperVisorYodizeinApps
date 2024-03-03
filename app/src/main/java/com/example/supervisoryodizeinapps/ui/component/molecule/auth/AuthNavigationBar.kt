@@ -1,4 +1,4 @@
-package com.ydzmobile.supervisor.ui.component.molecule.auth
+package com.example.supervisoryodizeinapps.ui.component.molecule.auth
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement

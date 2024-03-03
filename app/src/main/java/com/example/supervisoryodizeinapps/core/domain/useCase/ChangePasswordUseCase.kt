@@ -1,6 +1,6 @@
-package com.ydzmobile.supervisor.core.domain.useCase
+package com.example.supervisoryodizeinapps.core.domain.useCase
 
-import com.ydzmobile.supervisor.core.data.auth.AuthRepositoryImpl
+import com.example.supervisoryodizeinapps.core.data.auth.AuthRepositoryImpl
 import javax.inject.Inject
 
 class ChangePasswordUseCase @Inject constructor(

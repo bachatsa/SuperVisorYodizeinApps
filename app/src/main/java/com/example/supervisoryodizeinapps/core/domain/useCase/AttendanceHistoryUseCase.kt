@@ -1,15 +1,12 @@
-package com.ydzmobile.supervisor.core.domain.useCase
+package com.example.supervisoryodizeinapps.core.domain.useCase
 
 import android.os.Build
 import androidx.annotation.RequiresApi
-import com.ydzmobile.supervisor.core.data.ResourceState
-import com.ydzmobile.supervisor.core.data.database.DatabaseRepositoryImpl
-import com.ydzmobile.supervisor.core.domain.enum.AttendanceType
-import com.ydzmobile.supervisor.core.domain.model.AttendanceHistoryModel
-import com.ydzmobile.supervisor.core.domain.model.attendanceMonitor.AttendanceMonitorCellModel
-import kotlinx.coroutines.delay
+import com.example.supervisoryodizeinapps.core.data.ResourceState
+import com.example.supervisoryodizeinapps.core.data.database.DatabaseRepositoryImpl
+import com.example.supervisoryodizeinapps.core.domain.model.AttendanceHistoryModel
+import com.example.supervisoryodizeinapps.core.domain.model.attendanceMonitor.AttendanceMonitorCellModel
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class AttendanceHistoryUseCase @Inject constructor(

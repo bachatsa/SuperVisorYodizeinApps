@@ -1,15 +1,13 @@
-package com.ydzmobile.supervisor.core.viewModel
+package com.example.supervisoryodizeinapps.core.viewModel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ydzmobile.supervisor.core.data.AuthState
-import com.ydzmobile.supervisor.core.data.ResourceState
-import com.ydzmobile.supervisor.core.domain.model.attendanceMonitor.AttendanceMonitorCellModel
-import com.ydzmobile.supervisor.core.domain.useCase.AttendanceHistoryUseCase
-import com.ydzmobile.supervisor.core.extension.dateStringToLong
-import com.ydzmobile.supervisor.core.extension.longToDateStr
-import com.ydzmobile.supervisor.core.extension.toDate
+import com.example.supervisoryodizeinapps.core.data.ResourceState
+import com.example.supervisoryodizeinapps.core.domain.model.attendanceMonitor.AttendanceMonitorCellModel
+import com.example.supervisoryodizeinapps.core.domain.useCase.AttendanceHistoryUseCase
+import com.example.supervisoryodizeinapps.core.extension.longToDateStr
+import com.example.supervisoryodizeinapps.core.extension.toDate
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

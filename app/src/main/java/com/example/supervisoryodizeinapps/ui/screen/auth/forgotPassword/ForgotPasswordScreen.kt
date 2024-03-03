@@ -1,6 +1,5 @@
 package com.ydzmobile.supervisor.ui.screen.auth.forgotPassword
 
-import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -20,11 +19,11 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.supervisoryodizeinapps.R
-import com.ydzmobile.supervisor.core.extension.isValidEmail
-import com.ydzmobile.supervisor.core.viewModel.ForgotPasswordUIState
-import com.ydzmobile.supervisor.ui.component.atom.button.YMBorderedButton
-import com.ydzmobile.supervisor.ui.component.atom.textfield.YMTextField
-import com.ydzmobile.supervisor.ui.component.molecule.auth.AuthBanner
+import com.example.supervisoryodizeinapps.core.extension.isValidEmail
+import com.example.supervisoryodizeinapps.core.viewModel.ForgotPasswordUIState
+import com.example.supervisoryodizeinapps.ui.component.atom.button.YMBorderedButton
+import com.example.supervisoryodizeinapps.ui.component.atom.textfield.YMTextField
+import com.example.supervisoryodizeinapps.ui.component.molecule.auth.AuthBanner
 import com.ydzmobile.supervisor.ui.navigation.Screen
 import com.ydzmobile.supervisor.ui.theme.littleBoyBlue
 import com.ydzmobile.supervisor.ui.theme.poppinsFont

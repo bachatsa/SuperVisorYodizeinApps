@@ -1,11 +1,13 @@
-package com.ydzmobile.supervisor.core.extension
+package com.example.supervisoryodizeinapps.core.extension
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import java.text.SimpleDateFormat
-import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.Locale
 
+@RequiresApi(Build.VERSION_CODES.O)
 fun String.toDate(pattern: String = "yyyy-MM-dd"): LocalDateTime? {
     try {
         val formatter = DateTimeFormatter.ofPattern(pattern)

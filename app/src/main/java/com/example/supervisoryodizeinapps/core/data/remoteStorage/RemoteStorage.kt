@@ -1,8 +1,7 @@
-package com.ydzmobile.supervisor.core.data.remoteStorage
+package com.example.supervisoryodizeinapps.core.data.remoteStorage
 
 import android.net.Uri
-import com.ydzmobile.supervisor.core.data.ResourceState
-import com.ydzmobile.supervisor.core.domain.model.auth.User
+import com.example.supervisoryodizeinapps.core.data.ResourceState
 import kotlinx.coroutines.flow.Flow
 
 interface RemoteStorage {

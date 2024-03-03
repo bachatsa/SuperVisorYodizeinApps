@@ -1,12 +1,11 @@
-package com.ydzmobile.supervisor.core.viewModel
+package com.example.supervisoryodizeinapps.core.viewModel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.google.maps.android.ktx.utils.sphericalDistance
-import com.ydzmobile.supervisor.core.data.ResourceState
-import com.ydzmobile.supervisor.core.domain.model.attendance.Attendance
-import com.ydzmobile.supervisor.core.domain.useCase.PermitUseCase
+import com.example.supervisoryodizeinapps.core.data.ResourceState
+import com.example.supervisoryodizeinapps.core.domain.model.attendance.Attendance
+import com.example.supervisoryodizeinapps.core.domain.useCase.PermitUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -43,6 +42,8 @@ class PermitViewModel @Inject constructor(
                     is ResourceState.LOADING -> {
                         Log.d("onPresentPressed", "LOADING")
                     }
+
+                    else -> {}
                 }
             }.launchIn(viewModelScope)
     }

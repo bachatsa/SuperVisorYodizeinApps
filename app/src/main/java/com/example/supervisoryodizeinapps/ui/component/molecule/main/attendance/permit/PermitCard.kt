@@ -1,4 +1,4 @@
-package com.ydzmobile.supervisor.ui.component.molecule.main.attendance.permit
+package com.example.supervisoryodizeinapps.ui.component.molecule.main.attendance.permit
 
 import android.widget.Toast
 import androidx.compose.animation.AnimatedContent
@@ -29,9 +29,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.supervisoryodizeinapps.R
-import com.ydzmobile.supervisor.core.domain.enum.PermitType
-import com.ydzmobile.supervisor.ui.component.atom.button.YMBorderedButton
-import com.ydzmobile.supervisor.ui.component.atom.button.YMCheckbox
+import com.example.supervisoryodizeinapps.core.domain.enum.PermitType
+import com.example.supervisoryodizeinapps.ui.component.atom.button.YMBorderedButton
+import com.example.supervisoryodizeinapps.ui.component.atom.button.YMCheckbox
 import com.ydzmobile.supervisor.ui.theme.appleGreen
 import com.ydzmobile.supervisor.ui.theme.englishVermillion
 import com.ydzmobile.supervisor.ui.theme.poppinsFont

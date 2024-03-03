@@ -1,4 +1,4 @@
-package com.ydzmobile.supervisor.ui.component.atom.button
+package com.example.supervisoryodizeinapps.ui.component.atom.button
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement

@@ -10,9 +10,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.ydzmobile.supervisor.ui.screen.auth.register.RegisterScreen
 import com.example.supervisoryodizeinapps.R
-import com.ydzmobile.supervisor.core.viewModel.ForgotPasswordViewModel
-import com.ydzmobile.supervisor.core.viewModel.LoginViewModel
-import com.ydzmobile.supervisor.core.viewModel.RegisterViewModel
+import com.example.supervisoryodizeinapps.core.viewModel.ForgotPasswordViewModel
+import com.example.supervisoryodizeinapps.core.viewModel.LoginViewModel
+import com.example.supervisoryodizeinapps.core.viewModel.RegisterViewModel
 import com.ydzmobile.supervisor.ui.navigation.AUTH_GRAPH_ROUTE
 import com.ydzmobile.supervisor.ui.navigation.Screen
 import com.ydzmobile.supervisor.ui.screen.auth.AuthScreenWrapper

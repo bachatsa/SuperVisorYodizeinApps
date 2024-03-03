@@ -18,7 +18,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.ydzmobile.supervisor.core.domain.model.attendanceMonitor.AttendanceMonitorCellModel
+import com.example.supervisoryodizeinapps.core.domain.model.attendanceMonitor.AttendanceMonitorCellModel
 import com.ydzmobile.supervisor.ui.theme.appleGreen
 import com.ydzmobile.supervisor.ui.theme.lightCarminePink
 import com.ydzmobile.supervisor.ui.theme.poppinsFont

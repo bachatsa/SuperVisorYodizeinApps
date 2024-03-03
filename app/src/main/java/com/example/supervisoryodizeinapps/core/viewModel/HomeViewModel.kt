@@ -1,12 +1,12 @@
-package com.ydzmobile.supervisor.core.viewModel
+package com.example.supervisoryodizeinapps.core.viewModel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ydzmobile.supervisor.core.data.ResourceState
-import com.ydzmobile.supervisor.core.domain.model.TargetListCellModel
-import com.ydzmobile.supervisor.core.domain.model.division.Division
-import com.ydzmobile.supervisor.core.domain.useCase.HomeUseCase
+import com.example.supervisoryodizeinapps.core.data.ResourceState
+import com.example.supervisoryodizeinapps.core.domain.model.TargetListCellModel
+import com.example.supervisoryodizeinapps.core.domain.model.division.Division
+import com.example.supervisoryodizeinapps.core.domain.useCase.HomeUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -44,6 +44,8 @@ class HomeViewModel @Inject constructor(
                 is ResourceState.LOADING -> {
                     Log.d("getDivisions", "LOADING")
                 }
+
+                else -> {}
             }
         }.launchIn(viewModelScope)
     }

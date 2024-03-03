@@ -1,13 +1,11 @@
-package com.ydzmobile.supervisor.core.viewModel
+package com.example.supervisoryodizeinapps.core.viewModel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ydzmobile.supervisor.core.data.AuthState
-import com.ydzmobile.supervisor.core.data.ResourceState
-import com.ydzmobile.supervisor.core.domain.model.monitor.TargetModel
-import com.ydzmobile.supervisor.core.domain.model.monitor.TargetModelCell
-import com.ydzmobile.supervisor.core.domain.useCase.DivisionDetailUseCase
+import com.example.supervisoryodizeinapps.core.data.ResourceState
+import com.example.supervisoryodizeinapps.core.domain.model.monitor.TargetModelCell
+import com.example.supervisoryodizeinapps.core.domain.useCase.DivisionDetailUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

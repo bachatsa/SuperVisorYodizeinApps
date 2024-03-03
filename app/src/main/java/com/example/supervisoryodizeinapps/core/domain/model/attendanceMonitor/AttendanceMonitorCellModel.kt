@@ -1,4 +1,4 @@
-package com.ydzmobile.supervisor.core.domain.model.attendanceMonitor
+package com.example.supervisoryodizeinapps.core.domain.model.attendanceMonitor
 
 data class AttendanceMonitorCellModel(
     val uid: String,

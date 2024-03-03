@@ -1,10 +1,10 @@
-package com.ydzmobile.supervisor.core.domain.model
+package com.example.supervisoryodizeinapps.core.domain.model
 
 import androidx.compose.ui.graphics.Color
 import com.example.supervisoryodizeinapps.R
-import com.ydzmobile.supervisor.core.domain.enum.AttendanceType
-import com.ydzmobile.supervisor.core.extension.toDate
-import com.ydzmobile.supervisor.core.extension.toFormattedString
+import com.example.supervisoryodizeinapps.core.domain.enum.AttendanceType
+import com.example.supervisoryodizeinapps.core.extension.toDate
+import com.example.supervisoryodizeinapps.core.extension.toFormattedString
 import com.ydzmobile.supervisor.ui.theme.*
 import java.time.LocalDateTime
 

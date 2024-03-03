@@ -1,4 +1,4 @@
-package com.ydzmobile.supervisor.ui.component.atom.text
+package com.example.supervisoryodizeinapps.ui.component.atom.text
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row

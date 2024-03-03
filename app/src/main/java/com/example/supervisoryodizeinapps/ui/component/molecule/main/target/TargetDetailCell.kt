@@ -19,8 +19,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.supervisoryodizeinapps.R
-import com.ydzmobile.supervisor.core.domain.model.monitor.TargetModelCell
-import com.ydzmobile.supervisor.ui.component.atom.text.YMTextWithDetail
+import com.example.supervisoryodizeinapps.core.domain.model.monitor.TargetModelCell
+import com.example.supervisoryodizeinapps.ui.component.atom.text.YMTextWithDetail
 import com.ydzmobile.supervisor.ui.theme.littleBoyBlue
 import com.ydzmobile.supervisor.ui.theme.poppinsFont
 import com.ydzmobile.supervisor.ui.theme.tuftsBlue

@@ -1,4 +1,4 @@
-package com.ydzmobile.supervisor.ui.component.atom.button
+package com.example.supervisoryodizeinapps.ui.component.atom.button
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.PaddingValues
@@ -14,7 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.DialogProperties
-import com.ydzmobile.supervisor.core.extension.longToDateStr
+import com.example.supervisoryodizeinapps.core.extension.longToDateStr
 
 @SuppressLint("RememberReturnType")
 @OptIn(ExperimentalMaterial3Api::class)

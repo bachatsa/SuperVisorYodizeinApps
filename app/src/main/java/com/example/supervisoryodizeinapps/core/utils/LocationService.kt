@@ -1,17 +1,15 @@
-package com.ydzmobile.supervisor.core.utils
+package com.example.supervisoryodizeinapps.core.utils
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.os.Build
 import android.os.Looper
-import androidx.annotation.RequiresApi
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.Priority
 import com.google.android.gms.maps.model.LatLng
-import com.ydzmobile.supervisor.core.extension.hasLocationPermission
+import com.example.supervisoryodizeinapps.core.extension.hasLocationPermission
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow

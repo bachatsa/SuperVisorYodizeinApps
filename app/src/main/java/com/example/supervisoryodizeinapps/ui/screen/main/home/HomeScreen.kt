@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
@@ -14,25 +13,15 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.supervisoryodizeinapps.R
-import com.ydzmobile.supervisor.core.viewModel.HomeUIState
-import com.ydzmobile.supervisor.ui.component.molecule.main.home.HomeTargetListCell
-import com.ydzmobile.supervisor.ui.component.molecule.main.home.HomeTaskHistory
+import com.example.supervisoryodizeinapps.core.viewModel.HomeUIState
 import com.ydzmobile.supervisor.ui.component.molecule.main.target.TargetCell
-import com.ydzmobile.supervisor.ui.navigation.DIVISION_ARGUMENT_KEY
-import com.ydzmobile.supervisor.ui.navigation.DIVISION_ID_ARGUMENT_KEY
-import com.ydzmobile.supervisor.ui.navigation.bottomTabNav.BottomBarScreen
-import com.ydzmobile.supervisor.ui.theme.littleBoyBlue
-import com.ydzmobile.supervisor.ui.theme.poppinsFont
 import com.ydzmobile.supervisor.ui.theme.tealBlue
 
 @Composable
@@ -54,7 +43,8 @@ fun HomeScreen(
                 modifier = Modifier
                     .height(2.dp)
                     .weight(2f)
-                    .background(tealBlue),
+                    .background(tealBlue)
+                    ,
                 content = {}
             )
 

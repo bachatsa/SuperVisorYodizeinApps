@@ -1,14 +1,13 @@
-package com.ydzmobile.supervisor.core.data.database
+package com.example.supervisoryodizeinapps.core.data.database
 
-import com.ydzmobile.supervisor.core.data.ResourceState
-import com.ydzmobile.supervisor.core.domain.model.AttendanceHistoryModel
-import com.ydzmobile.supervisor.core.domain.model.attendance.Attendance
-import com.ydzmobile.supervisor.core.domain.model.attendanceMonitor.AttendanceMonitorCellModel
-import com.ydzmobile.supervisor.core.domain.model.auth.User
-import com.ydzmobile.supervisor.core.domain.model.division.Division
-import com.ydzmobile.supervisor.core.domain.model.monitor.TargetModel
-import com.ydzmobile.supervisor.core.domain.model.monitor.TargetModelCell
-import com.ydzmobile.supervisor.core.domain.model.monitor.TargetModelRequest
+import com.example.supervisoryodizeinapps.core.data.ResourceState
+import com.example.supervisoryodizeinapps.core.domain.model.AttendanceHistoryModel
+import com.example.supervisoryodizeinapps.core.domain.model.attendance.Attendance
+import com.example.supervisoryodizeinapps.core.domain.model.attendanceMonitor.AttendanceMonitorCellModel
+import com.example.supervisoryodizeinapps.core.domain.model.auth.User
+import com.example.supervisoryodizeinapps.core.domain.model.division.Division
+import com.example.supervisoryodizeinapps.core.domain.model.monitor.TargetModelCell
+import com.example.supervisoryodizeinapps.core.domain.model.monitor.TargetModelRequest
 import kotlinx.coroutines.flow.Flow
 
 interface DatabaseRepository {
@@ -32,4 +31,5 @@ interface DatabaseRepository {
     fun checkIsAbleToDoAttendance(): Flow<ResourceState<Boolean>>
 
     fun getUsers(idDivision: String): Flow<ResourceState<List<User>>>
+    fun checkIsHasDoAttendance(): Flow<ResourceState<Boolean>>
 }

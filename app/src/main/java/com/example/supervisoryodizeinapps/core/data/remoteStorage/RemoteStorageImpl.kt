@@ -1,10 +1,9 @@
-package com.ydzmobile.supervisor.core.data.remoteStorage
+package com.example.supervisoryodizeinapps.core.data.remoteStorage
 
 import android.net.Uri
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
-import com.ydzmobile.supervisor.core.data.ResourceState
+import com.example.supervisoryodizeinapps.core.data.ResourceState
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow

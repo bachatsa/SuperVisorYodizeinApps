@@ -1,7 +1,7 @@
-package com.ydzmobile.supervisor.core.data.auth
+package com.example.supervisoryodizeinapps.core.data.auth
 
 import com.google.firebase.auth.AuthResult
-import com.ydzmobile.supervisor.core.data.ResourceState
+import com.example.supervisoryodizeinapps.core.data.ResourceState
 import kotlinx.coroutines.flow.Flow
 
 interface AuthRepository {
