@@ -7,6 +7,6 @@ data class AttendanceMonitorCellModel(
     var division: String,
     val attendanceType: String,
     val date: String,
-    val reasonOfPermission: String,
+    val reasonOfPermission: String?,
 
 )

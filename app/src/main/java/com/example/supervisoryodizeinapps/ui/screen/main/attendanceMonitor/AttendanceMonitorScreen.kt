@@ -56,6 +56,7 @@ fun AttendanceMonitorScreen(
     LaunchedEffect(Unit) {
         onViewAppear()
         Log.d("DebugRecomposition",  uiState.attendances.toString())
+
     }
     Box(
 
@@ -87,6 +88,7 @@ fun AttendanceMonitorScreen(
             ) {
 
                 AttendanceMonitorCell(data = it)
+                Log.d("Data Absence", it.toString())
             }
         }
         YMDateProfileDatePicker(

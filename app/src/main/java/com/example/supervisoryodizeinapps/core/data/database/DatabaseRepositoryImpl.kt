@@ -233,7 +233,7 @@ open class DatabaseRepositoryImpl @Inject constructor(
                     date = (data["createAt"] as Timestamp).toDate()
                         .toString(pattern = "yyyy-MM-dd HH:mm:ss"),
                     userName = "",
-                    reasonOfPermission = data["reasonOfPermission"] as String,
+                    reasonOfPermission = data["reasonOfPermission"] as String?,
                 )
 
                 for (document in users) {
@@ -250,6 +250,8 @@ open class DatabaseRepositoryImpl @Inject constructor(
             emit(value = ResourceState.SUCCESS(data = results.toList()))
         }.catch {
             emit(value = ResourceState.ERROR(it.localizedMessage.toString()))
+//            Log.d("Test Kenapa error", it.localizedMessage.toString())
+//            Log.d("Test Data Lagi", it.toString())
         }
     }
 
