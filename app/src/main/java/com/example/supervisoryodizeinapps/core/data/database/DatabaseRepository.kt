@@ -27,7 +27,6 @@ interface DatabaseRepository {
     fun getAttendances(selectedDate: String): Flow<ResourceState<List<AttendanceMonitorCellModel>>>
 
     fun getHistories(): Flow<ResourceState<List<AttendanceHistoryModel>>>
-
     fun checkIsAbleToDoAttendance(): Flow<ResourceState<Boolean>>
 
     fun getUsers(idDivision: String): Flow<ResourceState<List<User>>>

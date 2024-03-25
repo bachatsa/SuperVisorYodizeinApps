@@ -15,4 +15,6 @@ data class Attendance(
     val reasonOfPermission: String? = null,
     val createAt: Timestamp = Timestamp(Date())
 )
+
+
     

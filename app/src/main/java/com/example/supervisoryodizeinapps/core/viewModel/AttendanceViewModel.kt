@@ -1,8 +1,19 @@
 package com.example.supervisoryodizeinapps.core.viewModel
 
+import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.Canvas
+import android.graphics.Paint
+import android.graphics.Typeface
+import android.graphics.pdf.PdfDocument
+import android.os.Environment
 import android.util.Log
+import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.supervisoryodizeinapps.R
 import com.google.android.gms.maps.model.LatLng
 import com.google.maps.android.ktx.utils.sphericalDistance
 import com.example.supervisoryodizeinapps.core.data.ResourceState
@@ -16,6 +27,8 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import java.io.File
+import java.io.FileOutputStream
 import javax.inject.Inject
 
 @HiltViewModel
@@ -36,7 +49,7 @@ class AttendanceViewModel @Inject constructor(
     
     fun handle(event: PermissionEvent) {
         when (event) {
-            PermissionEvent.Granted -> {
+            is PermissionEvent.Granted -> {
                 viewModelScope.launch {
                     getLocationUseCase.invoke().collect { location ->
                         _locationState.value = LocationState.Success(location)
@@ -128,6 +141,7 @@ class AttendanceViewModel @Inject constructor(
                 }
             }.launchIn(viewModelScope)
     }
+
 
     fun clearToast() {
         _uiState.update {

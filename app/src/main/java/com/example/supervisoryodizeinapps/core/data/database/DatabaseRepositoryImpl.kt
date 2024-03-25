@@ -250,8 +250,8 @@ open class DatabaseRepositoryImpl @Inject constructor(
             emit(value = ResourceState.SUCCESS(data = results.toList()))
         }.catch {
             emit(value = ResourceState.ERROR(it.localizedMessage.toString()))
-//            Log.d("Test Kenapa error", it.localizedMessage.toString())
-//            Log.d("Test Data Lagi", it.toString())
+            Log.d("Test Kenapa error", it.localizedMessage.toString())
+            Log.d("Test Data Lagi", it.toString())
         }
     }
 

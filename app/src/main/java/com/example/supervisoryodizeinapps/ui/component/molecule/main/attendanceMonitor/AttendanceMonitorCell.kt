@@ -1,5 +1,6 @@
 package com.ydzmobile.supervisor.ui.component.molecule.main.attendanceMonitor
 
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -34,6 +35,8 @@ fun AttendanceMonitorCell(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Column {
+                AnimatedVisibility(visible = !data.division.equals("-")) {
+                    Column {
                 Text(
                     text = data.userName,
                     style = poppinsFont(size = 14, fontWeight = 600)
@@ -43,28 +46,34 @@ fun AttendanceMonitorCell(
                     text = "Peran: ${ data.division }",
                     style = poppinsFont(size = 12, fontWeight = 600)
                 )
+                val reasonToPrint = data.reasonOfPermission ?: ""
 
-                Text(text = "Reason: ${ data.reasonOfPermission }",
-                    style = poppinsFont(size = 12, fontWeight = 600)
-                )
 
+                AnimatedVisibility(visible = reasonToPrint.isNotEmpty()) {
+                   Text(text = "Reason: ${reasonToPrint}",
+                   style = poppinsFont(size = 12, fontWeight = 600),
+                      )
+                }
+                    }
+                }
+            }
+                Spacer(modifier = Modifier.weight(1f))
+            AnimatedVisibility(visible = !data.division.equals("-")) {
+                Box(
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(12.dp))
+                        .background(if (data.attendanceType.lowercase() == "masuk") appleGreen else lightCarminePink)
+                        .padding(vertical = 4.dp)
+                        .width(90.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        text = data.attendanceType,
+                        style = poppinsFont(size = 12, fontWeight = 700, color = Color.White)
+                    )
+                }
             }
 
-            Spacer(modifier = Modifier.weight(1f))
-
-            Box(
-                modifier = Modifier
-                    .clip(RoundedCornerShape(12.dp))
-                    .background(if (data.attendanceType.lowercase() == "masuk") appleGreen else lightCarminePink)
-                    .padding(vertical = 4.dp)
-                    .width(90.dp),
-                contentAlignment = Alignment.Center
-            ) {
-                Text(
-                    text = data.attendanceType,
-                    style = poppinsFont(size = 12, fontWeight = 700, color = Color.White)
-                )
-            }
         }
 
         Divider()

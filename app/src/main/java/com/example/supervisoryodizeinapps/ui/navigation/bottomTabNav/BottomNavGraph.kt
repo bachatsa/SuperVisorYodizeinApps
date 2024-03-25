@@ -1,5 +1,7 @@
 package com.ydzmobile.supervisor.ui.navigation.bottomTabNav
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -17,6 +19,7 @@ import com.ydzmobile.supervisor.ui.screen.main.attendanceMonitor.AttendanceMonit
 import com.ydzmobile.supervisor.ui.screen.main.home.HomeScreen
 import com.ydzmobile.supervisor.ui.screen.main.profile.ProfileScreen
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun BottomNavGraph(
     navController: NavHostController,
@@ -31,7 +34,7 @@ fun BottomNavGraph(
             val viewModel = hiltViewModel<AttendanceMonitorViewModel>()
             val uiState by viewModel.uiState.collectAsState()
 
-            AttendanceMonitorScreen(navController, uiState, viewModel::onSelectedDateChanged, viewModel::getAttendances)
+            AttendanceMonitorScreen(navController, uiState, viewModel::onSelectedDateChanged, viewModel::getAttendances, viewModel::clearToast)
         }
 
         composable(route = BottomBarScreen.Home.route)

@@ -1,6 +1,16 @@
 package com.ydzmobile.supervisor.ui.screen.main.attendanceMonitor
 
+import android.annotation.SuppressLint
+import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.Canvas
+import android.graphics.Paint
+import android.graphics.Typeface
+import android.graphics.pdf.PdfDocument
+import android.os.Environment
 import android.util.Log
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -29,30 +39,66 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.core.content.ContextCompat
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.lifecycle.viewmodel.viewModelFactory
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.supervisoryodizeinapps.R
+import com.example.supervisoryodizeinapps.core.data.ResourceState
 import com.example.supervisoryodizeinapps.core.extension.dateStringToLong
+import com.example.supervisoryodizeinapps.core.extension.hasLocationPermission
 import com.example.supervisoryodizeinapps.core.extension.longToDateStr
 import com.example.supervisoryodizeinapps.core.viewModel.AttendanceMonitorUIState
+import com.example.supervisoryodizeinapps.core.viewModel.AttendanceMonitorViewModel
+import com.example.supervisoryodizeinapps.core.viewModel.PermissionEvent
 import com.example.supervisoryodizeinapps.ui.component.atom.button.YMDateProfileDatePicker
+import com.google.accompanist.permissions.ExperimentalPermissionsApi
+import com.google.accompanist.permissions.rememberMultiplePermissionsState
 import com.ydzmobile.supervisor.ui.component.molecule.main.attendanceMonitor.AttendanceMonitorCell
+import com.ydzmobile.supervisor.ui.screen.main.attendance.RationaleAlert
 import com.ydzmobile.supervisor.ui.theme.littleBoyBlue
 import com.ydzmobile.supervisor.ui.theme.poppinsFont
+import java.io.File
+import java.io.FileOutputStream
 
+@SuppressLint("MissingPermission")
+@OptIn(ExperimentalPermissionsApi::class)
 @Composable
 fun AttendanceMonitorScreen(
     navController: NavController,
     uiState: AttendanceMonitorUIState,
     onDateChanged: (String) -> Unit,
-    onViewAppear: () -> Unit
+    onViewAppear: () -> Unit,
+    onFinishShowToast: () -> Unit
 ) {
+    val context = LocalContext.current
+    val permissionState = rememberMultiplePermissionsState(permissions = listOf(
+        android.Manifest.permission.READ_EXTERNAL_STORAGE,
+        android.Manifest.permission.WRITE_EXTERNAL_STORAGE
+
+    ))
 
     var showDatePicker by remember { mutableStateOf(false) }
+    LaunchedEffect(key1 = uiState.toastMessages) {
+        if (uiState.toastMessages.isNotEmpty()) {
+            Toast.makeText(
+                context,
+                uiState.toastMessages,
+                Toast.LENGTH_SHORT
+            ).show()
+
+        }
+        onFinishShowToast()
+    }
+    LaunchedEffect(!context.hasLocationPermission()){
+        permissionState.launchMultiplePermissionRequest()
+    }
     LaunchedEffect(Unit) {
         onViewAppear()
         Log.d("DebugRecomposition",  uiState.attendances.toString())
@@ -79,6 +125,9 @@ fun AttendanceMonitorScreen(
                     showDatePicker = true
                 }
             }
+            item {
+                Download()
+            }
 
             items(
                 items = uiState.attendances,
@@ -87,7 +136,7 @@ fun AttendanceMonitorScreen(
                 }
             ) {
 
-                AttendanceMonitorCell(data = it)
+                AttendanceMonitorCell(data = it )
                 Log.d("Data Absence", it.toString())
             }
         }
@@ -107,7 +156,7 @@ fun AttendanceMonitorScreen(
 private fun Filter(
     modifier: Modifier,
     selectedDate: String,
-    onDatePickerPressed: () -> Unit
+    onDatePickerPressed: () -> Unit,
 ) {
     Row(
         modifier = modifier,
@@ -115,7 +164,6 @@ private fun Filter(
         horizontalArrangement = Arrangement.spacedBy(10.dp)
     ) {
         Spacer(modifier = Modifier.weight(1f))
-
         Button(
             modifier = Modifier
                 .border(1.dp, littleBoyBlue, shape = RoundedCornerShape(8.dp))
@@ -129,7 +177,7 @@ private fun Filter(
             )
         ) {
             Row(
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
+                horizontalArrangement = Arrangement.spacedBy(3.dp)
             ) {
                 Image(
                     modifier = Modifier.size(15.dp),
@@ -144,14 +192,40 @@ private fun Filter(
                 )
             }
         }
+    }
+//        IconButton(onClick = { }) {
+//            Icon(
+//                modifier = Modifier.size(15.dp),
+//                painter = painterResource(id = R.drawable.ic_filter),
+//                contentDescription = null,
+//                tint = littleBoyBlue
+//            )
+//        }
 
-        IconButton(onClick = { }) {
-            Icon(
-                modifier = Modifier.size(15.dp),
-                painter = painterResource(id = R.drawable.ic_filter),
+}
+@Composable
+private fun Download(){
+    val viewModel: AttendanceMonitorViewModel = viewModel()
+    Button(
+        modifier = Modifier
+            .border(1.dp, littleBoyBlue, shape = RoundedCornerShape(8.dp))
+            .height(28.dp)
+            .padding(horizontal = 8.dp),
+        onClick = {viewModel.convertDataToPdf()},
+        shape = RoundedCornerShape(8.dp),
+        contentPadding = PaddingValues(0.dp),
+        colors = ButtonDefaults.buttonColors(
+            containerColor = Color.White
+        )
+    ) {
+        Row(horizontalArrangement = Arrangement.spacedBy(3.dp)) {
+            Image(
+                modifier = Modifier.size(17.dp),
+                painter = painterResource(id = R.drawable.baseline_arrow_downward_24),
                 contentDescription = null,
-                tint = littleBoyBlue
+                contentScale = ContentScale.Fit
             )
+            Text(text = "Download PDF", style = poppinsFont(12, fontWeight = 400))
         }
     }
 }
@@ -159,5 +233,8 @@ private fun Filter(
 @Preview(showSystemUi = true)
 @Composable
 private fun AttendanceMonitorScreenPreview() {
-    AttendanceMonitorScreen(rememberNavController(), AttendanceMonitorUIState(), {}, {})
+    AttendanceMonitorScreen(rememberNavController(), AttendanceMonitorUIState(), {}, {},{})
 }
+
+
+
